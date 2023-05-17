@@ -10,7 +10,9 @@ public class BoardDTO {
 	private String subject;
 	private String password;
 	private Date enrollDt;
+	private long readCnt;
 	private String content;
+	
 	
 	public long getBoardId() {
 		return boardId;
@@ -48,6 +50,12 @@ public class BoardDTO {
 	public void setEnrollDt(Date enrollDt) {
 		this.enrollDt = enrollDt;
 	}
+	public long getReadCnt() {
+		return readCnt;
+	}
+	public void setReadCnt(long readCnt) {
+		this.readCnt = readCnt;
+	}
 	public String getContent() {
 		return content;
 	}
@@ -55,11 +63,14 @@ public class BoardDTO {
 		this.content = content;
 	}
 	
+	
 	@Override
 	public String toString() {
 		return "BoardDTO [boardId=" + boardId + ", writer=" + writer + ", email=" + email + ", subject=" + subject
-				+ ", password=" + password + ", enrollDt=" + enrollDt + ", content=" + content + "]";
+				+ ", password=" + password + ", enrollDt=" + enrollDt + ", readCnt=" + readCnt + ", content=" + content
+				+ "]";
 	}
+	
 	
 	
 	

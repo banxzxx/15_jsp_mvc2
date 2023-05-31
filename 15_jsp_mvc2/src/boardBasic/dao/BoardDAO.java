@@ -135,10 +135,6 @@ public class BoardDAO {
 				pstmt.executeUpdate();
 			}
 			
-			//select 해보기 전에 조회수를 올리기
-			pstmt = conn.prepareStatement("UPDATE BOARD SET READ_CNT = READ_CNT + 1 WHERE BOARD_ID = ?");
-			pstmt.setLong(1, boardId);
-			pstmt.executeUpdate();
 			
 			//임의의 BOARD_ID를 가진 row 정보 가져오기
 			pstmt = conn.prepareStatement("SELECT * FROM BOARD WHERE BOARD_ID = ?");

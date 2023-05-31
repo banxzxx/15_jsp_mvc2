@@ -19,6 +19,7 @@
 		</tr>
 		
 		<c:set var="idx" value="1"/>
+		
 		<c:forEach var="boardDTO" items="${boardList }">
 			<tr align="center">
 				<td>${idx }</td>

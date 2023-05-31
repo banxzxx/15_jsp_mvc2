@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import boardBasic.dao.BoardDAO;
 import boardBasic.dto.BoardDTO;
-
+//4
 @WebServlet("/bDetail")
 public class DetailBoard extends HttpServlet {
 	

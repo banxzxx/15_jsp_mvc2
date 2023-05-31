@@ -14,7 +14,7 @@ import boardBasic.dao.BoardDAO;
 import boardBasic.dto.BoardDTO;
 
 
-//1
+//1 	process 페이지를 서블렛으로 사용한다고 보면 된다
 @WebServlet("/bWrite")
 public class WriteBoard extends HttpServlet {
 	
@@ -30,6 +30,7 @@ public class WriteBoard extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		
 		BoardDTO boardDTO = new BoardDTO();
+		//서블렛 내에서는 자바빈을 사용할 수 없다. 일일히 지정해주기
 		boardDTO.setWriter(request.getParameter("writer"));
 		boardDTO.setSubject(request.getParameter("subject"));
 		boardDTO.setEmail(request.getParameter("email"));

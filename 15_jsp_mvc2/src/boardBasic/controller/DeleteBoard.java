@@ -54,6 +54,7 @@ public class DeleteBoard extends HttpServlet {
 			 jsScript += "</script>";
 		}
 		
+		// print()를 통해 새로운 html를 생성한다
 		pw.print(jsScript);
 		
 	}

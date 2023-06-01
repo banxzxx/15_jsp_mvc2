@@ -40,7 +40,7 @@ public class WriteBoard extends HttpServlet {
 		BoardDAO.getInstance().insertBoard(boardDTO);
 		
 		
-		//작성한 글을 데베로 옮긴 후 등록됐음을 알리는 것을 클래스 안에서 하기
+		//작성한 글을 데베로 옮긴 후 등록됐음을 알리는 것을 해당 클래스 안에서 하기 (가상의 html을 만들어주는것)
 		// 클래스 내에 js 명령을 해주기 위해 response.getWriter() 해줌
 		response.setContentType("text/html; charset=UTF-8"); // 한국어 인코딩을 위해 해주기  ( 안하면 밑에 jsScript변수 안 한국어를 입력받지 못한다 ) 
 		PrintWriter pw = response.getWriter(); 

@@ -19,6 +19,9 @@ public class ListBoard extends HttpServlet {
 	private static final long serialVersionUID = 1L;
   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//뷰로 이동시 뷰가 필요한 정보 세팅해놓기
+		// 현재 뷰가 필요로 하는건 DTO리스트 !
+		
 		
 		ArrayList<BoardDTO> boardList = BoardDAO.getInstance().getBoardList();
 //		for (BoardDTO boardDTO : boardList) {

@@ -19,7 +19,9 @@ public class DeleteBoard extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		//delete 뷰에 보여야할 정보 세팅하기
+		// detail에서가지고온 보드아이디 값을 통해 정보를 가져오기 + boarddetail 메서드에 조회수 인자 false 해놓기
+				
 		BoardDTO boardDTO = BoardDAO.getInstance().getBoardDetail(Long.parseLong(request.getParameter("boardId")), false);
 		request.setAttribute("boardDTO" , boardDTO);
 		
@@ -30,13 +32,15 @@ public class DeleteBoard extends HttpServlet {
 	
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		//지우려고 한 정보를 받았다 !
+		// 지우려는 정보의 객체 DTO 만들어주기
 		request.setCharacterEncoding("utf-8");
-		
 		BoardDTO boardDTO = new BoardDTO();
 		boardDTO.setBoardId(Long.parseLong(request.getParameter("boardId")));
 		boardDTO.setPassword(request.getParameter("password"));
 		
+		
+		//지운 후 가상의 html을 통해 지움 여부를 알리기
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter pw = response.getWriter();	
 		

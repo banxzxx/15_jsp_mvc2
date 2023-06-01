@@ -20,6 +20,8 @@ public class DetailMember extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		HttpSession session = request.getSession();
+		
+		//객체 정보 들고오기
 		request.setAttribute("memberDTO", MemberDAO.getInstance().getMemberDetail((String)session.getAttribute("memberId")));
 		
 		RequestDispatcher dis = request.getRequestDispatcher("step2_loginEx/mDetail.jsp");

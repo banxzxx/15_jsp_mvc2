@@ -42,8 +42,10 @@
 	var isValidId = false;
 	var isValidConfirmPasswd = false;
 	
+	//가입을 누른 경우 ( onsubmit : 폼의 입력값이 서버로 제출될 때 발생하는 이벤트 )
 	function checkFormData() {
 		
+		// 생일을 한 문장으로 
 		var birthDt = $("#birthY").val() + "-" + $("#birthM").val() + "-" + $("#birthD").val();
 		$("[name='birthDt']").val(birthDt);
 		
@@ -64,6 +66,7 @@
 	
 	$().ready(function(){
 		
+		//비밀번호 확 text란에서 벗어나면 실행되는 함수 ( 얜 ajax로 안해도 되긴 함 서버를 왔다갔다할 필요가 없으니 )
 		// 입력한 비밀번호 일치 불일치 구분
 		$("#confirmPasswd").blur(function(){
 			
@@ -80,7 +83,8 @@
 		});
 		
 		
-		// '중복확인' 클릭 -> AJAX을 통해 서버를 거쳐 중복 아이디가 있는지 없는지 확인하기
+		// '중복확인' 클릭 시 AJAX을 통해 서버를 거쳐 중복 아이디가 있는지 없는지 확인하기
+		//CheckDuplicateId.java 서블렛으로 이동 -> DAO의 메서드를 통해 데베에 중복 확
 		$("#btnOverlapped").click(function(){
 			
 			$.ajax({
